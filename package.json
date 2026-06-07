@@ -2,9 +2,11 @@
   "name": "jdh5st",
   "version": "1.0.0",
   "description": "",
-  "main": "h5st.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "health": "node -e \"fetch('http://127.0.0.1:3001/health').then(r=>r.json()).then(j=>console.log(JSON.stringify(j,null,2)))\""
   },
   "private": true,
   "dependencies": {
