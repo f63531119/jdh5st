@@ -6,9 +6,14 @@ LABEL org.opencontainers.image.source="https://github.com/f63531119/jdh5st"
 
 WORKDIR /app
 
+ARG BUILD_COMMIT=unknown
+ARG BUILD_TIME=unknown
+
 ENV NODE_ENV=production \
     HOST=0.0.0.0 \
-    PORT=3001
+    PORT=3001 \
+    BUILD_COMMIT=$BUILD_COMMIT \
+    BUILD_TIME=$BUILD_TIME
 
 COPY package*.json ./
 RUN npm ci --omit=dev
